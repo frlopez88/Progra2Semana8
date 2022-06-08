@@ -7,7 +7,7 @@
     <ContentPage.Content>
         <StackLayout>
 
-            <Label Text="Formulario de Triangulos" />
+            <Label Text="Formulario de Triangulos" FontSize="25"/>
 
             <Entry Keyboard="Numeric" Placeholder="Ingrese lado de Triangulo" />
 
@@ -16,6 +16,8 @@
 
             <Label Text="Perimetro" />
             <Label Text="" />
+
+            <Button Text="Crear"></Button>
 
         </StackLayout>
     </ContentPage.Content>

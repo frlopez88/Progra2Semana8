@@ -18,6 +18,8 @@
             <Label Text="Perimetro" />
             <Label Text="" />
 
+            <Button Text="Crear"></Button>
+
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
