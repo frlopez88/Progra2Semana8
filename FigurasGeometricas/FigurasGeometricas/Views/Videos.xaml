@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="FigurasGeometricas.Views.Videos"
+    xmlns:local="clr-namespace:FigurasGeometricas.ViewModels"
+    Title="Videos"
+    >
+
+    <ContentPage.BindingContext>
+        <local:ViewModelVideos></local:ViewModelVideos>
+    </ContentPage.BindingContext>
+
+    <ContentPage.Content>
+        <StackLayout>
+
+            <WebView Source="{Binding VideoActual}" ></WebView>
+
+            <Button Text="Circulos" Command="{Binding CambiarVideoCirculos}" ></Button>
+            <Button Text="Cuadros" Command="{Binding CambiarVideoCuadros}" ></Button>
+            <Button Text="Triangulos" Command="{Binding CambiarVideoTriangulo}" ></Button>
+
+            <Label Text="{Binding VideoActual}"></Label>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -29,7 +29,7 @@ namespace FigurasGeometricas.ViewModels
 
         }
 
-        double radio;
+        double radio = 20;
         public double Radio {
             get => radio;
             set {

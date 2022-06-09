@@ -3,21 +3,31 @@
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     x:Class="FigurasGeometricas.Views.ViewTriangulos"
-    Title="Triangulos">
+    Title="Triangulos"
+    xmlns:local="clr-namespace:FigurasGeometricas.ViewModels"
+    >
+
+    <ContentPage.BindingContext>
+        <local:Triangulos></local:Triangulos>
+    </ContentPage.BindingContext>
+    
+
     <ContentPage.Content>
         <StackLayout>
 
             <Label Text="Formulario de Triangulos" FontSize="25"/>
 
-            <Entry Keyboard="Numeric" Placeholder="Ingrese lado de Triangulo" />
+            <Label Text="Lado A"/>
+
+            <Entry Keyboard="Numeric" Text="{Binding T.ladoa}" />
 
             <Label Text="Area"/>
-            <Label Text="" />
+            <Label Text="{Binding T.area}" />
 
             <Label Text="Perimetro" />
-            <Label Text="" />
+            <Label Text="{Binding T.perimetro}" />
 
-            <Button Text="Crear"></Button>
+            <Button Text="Crear" Command="{Binding Crear}" /> 
 
         </StackLayout>
     </ContentPage.Content>

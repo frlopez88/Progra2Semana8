@@ -3,22 +3,30 @@
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     x:Class="FigurasGeometricas.Views.ViewCuadrado"
+    xmlns:local="clr-namespace:FigurasGeometricas.ViewModels"
     Title="Cuadrados"
     >
+
+    <ContentPage.BindingContext>
+        <local:ViewModelCuadrado></local:ViewModelCuadrado>
+    </ContentPage.BindingContext>
+
     <ContentPage.Content>
         <StackLayout>
 
             <Label Text="Formulario de Caudrados" FontSize="25" />
-            <Entry Keyboard="Numeric"  Placeholder="Ingrese lado a" />
-            <Entry Keyboard="Numeric" Placeholder="Ingrese lado b" />
+            <Label Text="Lado A"/>
+            <Entry Keyboard="Numeric" Text="{Binding C1.ladoa}"/>
+            <Label Text="Lado B"/>
+            <Entry Keyboard="Numeric" Text="{Binding C1.ladob}"/>
 
             <Label Text="Area"/>
-            <Label Text="" />
+            <Label Text="{Binding C1.area}" />
 
             <Label Text="Perimetro" />
-            <Label Text="" />
+            <Label Text="{Binding C1.perimetro}" />
 
-            <Button Text="Crear"></Button>
+            <Button Text="Crear" Command="{Binding Crear}" ></Button>
 
         </StackLayout>
     </ContentPage.Content>

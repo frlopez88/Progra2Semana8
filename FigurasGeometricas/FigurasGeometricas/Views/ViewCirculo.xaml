@@ -26,7 +26,8 @@
             <Label Text="{Binding Perimetro}"></Label>
 
             <Button Text="Crear" Command="{Binding CrearCirculo}" ></Button>
-             
+
+            
         </StackLayout>
 
     </ContentPage.Content>
