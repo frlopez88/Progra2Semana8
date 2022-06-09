@@ -14,7 +14,10 @@
     <ContentPage.Content>
         <StackLayout>
 
-            <WebView Source="{Binding VideoActual}" ></WebView>
+            <WebView Source="{Binding VideoActual}"
+                     WidthRequest="250"
+                     HeightRequest="250"
+                     VerticalOptions="FillAndExpand" ></WebView>
 
             <Button Text="Circulos" Command="{Binding CambiarVideoCirculos}" ></Button>
             <Button Text="Cuadros" Command="{Binding CambiarVideoCuadros}" ></Button>

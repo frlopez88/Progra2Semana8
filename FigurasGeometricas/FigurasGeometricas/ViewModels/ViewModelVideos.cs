@@ -30,12 +30,12 @@ namespace FigurasGeometricas.ViewModels
 
         }
 
-        private string videoTriangulos = "https://www.youtube.com/watch?v=I9S1kBXLkBo";
-        private string videoCuadrado = "https://www.youtube.com/watch?v=SMyYhwo9MWs";
-        private string videoCirculos = "https://www.youtube.com/watch?v=eQXMPh87F4M";
+        private string videoTriangulos = "https://www.youtube.com/embed/I9S1kBXLkBo";
+        private string videoCuadrado = "https://www.youtube.com/embed/SMyYhwo9MWs";
+        private string videoCirculos = "https://www.youtube.com/embed/eQXMPh87F4M";
 
 
-        string videoActual = "https://www.youtube.com/watch?v=1Jj7H6DAuMA";
+        string videoActual = "https://www.youtube.com/embed/IHHQm4MeoV0";
 
         public event PropertyChangedEventHandler PropertyChanged;
 
