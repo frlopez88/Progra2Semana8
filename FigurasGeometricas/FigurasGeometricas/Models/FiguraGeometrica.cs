@@ -1,6 +1,7 @@
 ﻿using System;
 namespace FigurasGeometricas.Models
 {
+    [Serializable]
     public class FiguraGeometrica
     {
         public double perimetro { get; set; }

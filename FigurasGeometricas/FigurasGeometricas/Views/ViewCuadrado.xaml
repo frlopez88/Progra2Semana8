@@ -28,6 +28,8 @@
 
             <Button Text="Crear" Command="{Binding Crear}" ></Button>
 
+            <Button Text="Abrir" Command="{Binding Abrir}"></Button>
+
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
