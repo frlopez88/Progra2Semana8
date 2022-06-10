@@ -2,74 +2,68 @@
 using System.ComponentModel;
 using Xamarin.Forms;
 using FigurasGeometricas.Models;
+using System.Runtime.Serialization.Formatters.Binary;
+using System.IO;
 
 namespace FigurasGeometricas.ViewModels
 {
     public class ViewModelCirculo : INotifyPropertyChanged
     {
-        private Circulo c = new Circulo();
+        
 
         public ViewModelCirculo()
         {
             CrearCirculo = new Command(
                     ()=>{
 
-                        c = new Circulo() {
-                            radio = Radio
-                        };
-                        c.calcularArea();
-                        c.calcularPerimetro();
+                        C1.calcularArea();
+                        C1.calcularPerimetro();
+                        C1 = C1;
 
-                        Area = c.area;
-                        Perimetro = c.perimetro;
+                        BinaryFormatter formatter = new BinaryFormatter();
+                        string ruta = Path.Combine(System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal), "Circulo.aut");
+                        Stream archivo = new FileStream(ruta, FileMode.Create, FileAccess.Write, FileShare.None);
+                        formatter.Serialize(archivo, C1);
+                        archivo.Close();
 
                     }
                 );
 
+            Abrir = new Command(()=> {
+
+
+                BinaryFormatter formatter = new BinaryFormatter();
+                string ruta = Path.Combine(System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal), "Circulo.aut");
+                Stream archivo = new FileStream(ruta, FileMode.Open, FileAccess.Read, FileShare.None);
+                C1 = (Circulo)formatter.Deserialize(archivo);
+                archivo.Close();
+
+
+            });
+
 
         }
 
-        double radio = 20;
-        public double Radio {
-            get => radio;
-            set {
 
-                radio = value;
-                var args = new PropertyChangedEventArgs(nameof(Radio));
-                PropertyChanged?.Invoke(this, args);
 
-            }
-        }
-
-        double area;
-        public double Area
+        Circulo c1 = new Circulo();
+        public Circulo C1
         {
-            get => area;
+            get => c1;
             set
             {
 
-                area = value;
-                var args = new PropertyChangedEventArgs(nameof(Area));
+                c1 = value;
+                var args = new PropertyChangedEventArgs(nameof(C1));
                 PropertyChanged?.Invoke(this, args);
 
             }
         }
 
-        double perimetro;
-        public double Perimetro
-        {
-            get => perimetro;
-            set
-            {
-
-                perimetro = value;
-                var args = new PropertyChangedEventArgs(nameof(Perimetro));
-                PropertyChanged?.Invoke(this, args);
-
-            }
-        }
+       
 
         public Command CrearCirculo { get; }
+        public Command Abrir { get; }
 
         public event PropertyChangedEventHandler PropertyChanged;
     }

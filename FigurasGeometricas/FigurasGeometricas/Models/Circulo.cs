@@ -1,6 +1,7 @@
 ﻿using System;
 namespace FigurasGeometricas.Models
 {
+    [Serializable]
     public class Circulo : FiguraGeometrica
     {
         public double radio { get; set; }

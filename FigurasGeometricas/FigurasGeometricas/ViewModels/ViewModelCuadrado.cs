@@ -37,8 +37,7 @@ namespace FigurasGeometricas.ViewModels
                 BinaryFormatter formatter = new BinaryFormatter();
                 string ruta = Path.Combine(System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal), "Cuadros.aut");
                 Stream archivo = new FileStream(ruta, FileMode.Open, FileAccess.Read, FileShare.None);
-                Cuadrado C1 = (Cuadrado)formatter.Deserialize(archivo);
-
+                C1 = (Cuadrado)formatter.Deserialize(archivo);
                 archivo.Close();
 
             } );

@@ -1,6 +1,8 @@
 ﻿using System;
 namespace FigurasGeometricas.Models
 {
+
+    [Serializable]
     public class Triangulo : FiguraGeometrica
     {
         public double ladoa { get; set; }

@@ -17,15 +17,17 @@
             <Label Text="Formulario de Circulos"  FontSize="25" />
 
             <Label Text="Radio" />
-            <Entry Keyboard="Numeric" Text="{Binding Radio}"  ></Entry>
+            <Entry Keyboard="Numeric" Text="{Binding C1.radio}"  ></Entry>
 
             <Label Text="Area" ></Label>
-            <Label Text="{Binding Area} "> </Label>
+            <Label Text="{Binding C1.area} "> </Label>
 
             <Label Text="Perimetro"></Label>
-            <Label Text="{Binding Perimetro}"></Label>
+            <Label Text="{Binding C1.perimetro}"></Label>
 
             <Button Text="Crear" Command="{Binding CrearCirculo}" ></Button>
+
+            <Button Text="Abrir" Command="{Binding Abrir}"></Button>
 
             
         </StackLayout>
