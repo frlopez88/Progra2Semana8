@@ -29,6 +29,8 @@
 
             <Button Text="Abrir" Command="{Binding Abrir}"></Button>
 
+            <Label Text="{Binding CantidadRegistros}" ></Label>
+
             
         </StackLayout>
 
